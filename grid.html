@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Start and End Example with Order</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eaeaea;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; 
+      grid-template-rows: 100px 200px;    
+      row-gap: 20px;
+      column-gap: 15px;
+      justify-content: center;
+      align-content: center;
+      width: 80%;
+      height: 80vh;
+      background-color: #f2f2f2;
+      padding: 10px;
+      border: 2px dashed #bbb;
+    }
+
+    .grid-item {
+      background-color: lightcoral;
+      color: white;
+      font-size: 22px;
+      text-align: center;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+   
+    .item1 {
+      grid-column-start: 1;
+      grid-column-end: 3; 
+      background-color: #ff6f61;
+    }
+
+   
+    .item4 {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      background-color: #66b266;
+    }
+
+    
+    .item1 { order: 3; } 
+    .grid-item:nth-child(2) { order: 1; } 
+    .grid-item:nth-child(3) { order: 4; } 
+    .item4 { order: 2; } 
+    .grid-item:nth-child(5) { order: 5; }
+    .grid-item:nth-child(6) { order: 6; } 
+
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <div class="grid-item item1">1 (spans 2 columns)</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item item4">4 (spans 2 rows)</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+  </div>
+
+</body>
+</html>
